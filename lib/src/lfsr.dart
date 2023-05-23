@@ -31,7 +31,7 @@ void main() async {
   final clk = SimpleClockGenerator(10).clk;
   final reset = Logic(name: 'reset');
 
-  final lsfr = LFSR(clk, reset, bitsNum: 3);
+  final lsfr = LFSR(clk, reset);
 
   await lsfr.build();
 
@@ -40,6 +40,7 @@ void main() async {
   WaveDumper(lsfr, outputPath: 'lfsr.vcd');
 
   Simulator.registerAction(25, () => reset.put(0));
+
   Simulator.setMaxSimTime(100);
   await Simulator.run();
 }
