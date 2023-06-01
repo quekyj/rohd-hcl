@@ -10,9 +10,7 @@
 
 // ignore_for_file: avoid_unused_constructor_parameters, public_member_api_docs
 
-import 'dart:async';
 import 'package:rohd/rohd.dart';
-import 'package:test/test.dart';
 
 class CompareSwap extends Module {
   final List<Logic> _inputs = [];
